@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$('.button').css("color", "red");
+	$('p').css("color", "red");
 	});
