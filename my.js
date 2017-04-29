@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$('p').css("color", "red");
+	$('p').css("border", "1px solid red");
 	});
