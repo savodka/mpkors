@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("p").css("border", "1px solid red");
+	$("p").css("color", "red");
 	});
 
 //.button
