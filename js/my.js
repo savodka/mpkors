@@ -1,3 +1,5 @@
 $(document).ready(function(){
-	$("body").color("red");
+	$("p").css("border", "1px solid red");
 	});
+
+//.button
