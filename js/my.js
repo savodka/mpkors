@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("p").css("backgroundColor", "red");
+	$("p").css("backgroundColor", "white");
 	});
 
 //.button
