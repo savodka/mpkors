@@ -1,4 +1,4 @@
-$('[class="subscribe"]').click(function(){
+$('[type="submit"]').click(function(){
 	$.post(
 		"send.php",
 		{
