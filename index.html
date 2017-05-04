@@ -32,10 +32,12 @@
 		<div class="button">
 	<form action=""method="post">
 		<input type="text" name="address" placeholder="ваш адрес">
-		<input type="submit" value="проверить">
+		<input class="button_for_turn_back" type="button" onclick="javascript: FindOnPage('text-to-find',false); return false;" value=" " title="Отменить поиск">
+		<input class="button_for_search" type="submit" onclick="javascript: FindOnPage('text-to-find',true); return false;" value=" " title="Начать поиск">
+		
 	</form>
 </div>
-				<h1>Здесь напечатайте адрес в формате ул и дом</h1>
+				<h1>напечатайте адрес в формате ул и дом</h1>
 		<img class="imgleft" src="images/demo.jpg" alt="">
 		<p>
 			В 1999 году в Москве была принята программа, согласно которой должны были снести более 1500 пятиэтажек, но она не была доведена до конца. 
