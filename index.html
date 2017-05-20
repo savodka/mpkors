@@ -1,59 +1,50 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8"/> 
-<link rel="stylesheet" type="text/css" href="style.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700|Raleway:200" rel="stylesheet">
-
-<title>Снос пятиэтажек в Москве</title>
-</head>
-<body>
-
-	<header>
-<h1>Снесут или не снесут ? </h1>
-<h3></h3>
-
-
-
-<div class="subscribe">
-	<form id="form" action="/send.php" method="post">
-		<input type="email" name="email" placeholder="enter your email">
-		<input type="submit" value="подписаться">
-	</form>
-</div>
-<p>Подпишитесь на актуальные новости о сносимых домах </p>
-
-	</header>
-
-
-<section>
-	<article>
-		<div class="button">
-	<form>
-		<input type="text" name="address" placeholder="ваш адрес">
-		
-		<input type="submit" onclick="javascript: FindOnPage('text-to-find',true); return false;" value="проверить" title="Начать поиск">
-		
-	</form>
-</div>
-				<h1>напечатайте адрес в формате ул и дом</h1>
-		<img class="imgleft" src="images/demo.jpg" alt="">
-		<p>
-			В 1999 году в Москве была принята программа, согласно которой должны были снести более 1500 пятиэтажек, но она не была доведена до конца. 
-			Сейчас власти города приняли решение развить старую программу, до 2018 года снести оставшиеся хрущевки и провести "реновацию территорий", что может означать снос не только устаревших пятиэтажных домов, но и других объектов и зданий (более 8 тысяч), мешающих развитию города. 
-			</p>
-			<p>
-				Чтобы быть в курсе этой новой программы был создан этот сайт. Данные по сносу собираются из открытых источников и постоянно актуализируются. 
-		</p>
-	
-	</article>
-	
-</section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<script src="js/my.js"></script>
-<script src="js/js.js"></script>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas в HTML5</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="1000" height="1000"
+                style="background-color:#eee; border: 1px solid #ccc; margin:10px;">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas"), 
+                context = canvas.getContext("2d"),
+                w = canvas.width,
+                h=canvas.height;
+                 
+            var mouse = { x:0, y:0};
+            var draw = true;
+             
+            canvas.addEventListener("mousedown", function(e){
+                 
+                mouse.x = e.pageX - this.offsetLeft;
+                mouse.y = e.pageY - this.offsetTop;
+                draw = true;
+                context.beginPath();
+                context.moveTo(mouse.x, mouse.y);
+            });
+            canvas.addEventListener("mousemove", function(e){
+                 
+                if(draw==true){
+                 
+                    mouse.x = e.pageX - this.offsetLeft;
+                    mouse.y = e.pageY - this.offsetTop;
+                    context.lineTo(mouse.x, mouse.y);
+                    context.stroke();
+                }
+            });
+            canvas.addEventListener("mouseup", function(e){
+                 
+                mouse.x = e.pageX - this.offsetLeft;
+                mouse.y = e.pageY - this.offsetTop;
+                context.lineTo(mouse.x, mouse.y);
+                context.stroke();
+                context.closePath();
+                draw = true;
+            });
+        </script>
+    </body>
 </html>
